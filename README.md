@@ -1,5 +1,4 @@
--- [[ CLÃ GOJO TECH: SOURCE 1:1 MEREBENNIE ]] --
--- Credits: SA_DOMINICK | Hardware: Ryzen 7 5700X
+
 
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
@@ -14,7 +13,7 @@ local isEnabled = true
 local isCoolingDown = false
 local cooldownDuration = 4
 
--- [[ FUNÇÃO DE BUSCA ORIGINAL ]] --
+
 local function findNearestPlayer()
     local nearestDistance = 20
     local nearestPlayer = nil
@@ -33,7 +32,7 @@ local function findNearestPlayer()
     return nearestPlayer
 end
 
--- [[ SISTEMA DE REMOTES ORIGINAL ]] --
+
 local function sendRemoteEvents()
     pcall(function()
         local dashData = {[1] = {Dash = Enum.KeyCode.W, Key = Enum.KeyCode.Q, Goal = "KeyPress"}}
@@ -58,7 +57,7 @@ local function sendRemoteEvents()
     end)
 end
 
--- [[ EXECUÇÃO DO DASH (LÓGICA DO SOURCE) ]] --
+
 local function executeDash()
     if not Character or not Humanoid or not RootPart then return end
     local target = findNearestPlayer()
@@ -105,7 +104,7 @@ local function executeDash()
     end)
 end
 
--- [[ NOSSA HUB RGB COMPACTA ]] --
+
 local mainGui = Instance.new("ScreenGui", LocalPlayer.PlayerGui)
 mainGui.Name = "GojoRGB_Hub"
 mainGui.ResetOnSpawn = false
@@ -160,7 +159,7 @@ btn.MouseButton1Click:Connect(function()
     btn.Text = isEnabled and "On" or "Off"
 end)
 
--- [[ NOTIFICAÇÃO SA_DOMINICK ]] --
+
 local function showNotification()
     local notif = Instance.new("Frame", mainGui)
     notif.Size = UDim2.new(0, 250, 0, 50)
@@ -176,7 +175,7 @@ local function showNotification()
     task.delay(3, function() notif:Destroy() end)
 end
 
--- [[ GATILHO DE ANIMAÇÃO ORIGINAL ]] --
+
 local function onAnimationPlayed(track)
     local id = tostring(track.Animation.AnimationId)
     if string.find(id, "10503381238") or string.find(id, "13379003796") then
@@ -200,4 +199,4 @@ if LocalPlayer.Character then setupCharacter(LocalPlayer.Character) end
 LocalPlayer.CharacterAdded:Connect(setupCharacter)
 showNotification()
 
--- Kaio falou, gajo, twin, oq ele tentar entender.
+
